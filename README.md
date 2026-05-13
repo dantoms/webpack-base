@@ -31,3 +31,23 @@ npm install --save-dev style-loader css-loader
 ```bash
 import "./styles.css"
 ```
+
+## Loading images
+### url()
+`css-loader` handles images loaded in css using `url()`
+
+### \<img src="">
+`html-loader` is required
+```bash
+npm install --save-dev html-loader
+```
+
+### Images used in JavaScript
+Just uncomment re relevant section in `webpack.config.js`
+The regex in the `test` property can be edited to remove extensions you don't need
+
+Add this to your JS file:
+```js
+import myImage from "./image.png";
+```
+and use `myImage` as `src` value
