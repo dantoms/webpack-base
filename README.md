@@ -51,3 +51,28 @@ Add this to your JS file:
 import myImage from "./image.png";
 ```
 and use `myImage` as `src` value
+
+## Webpack dev server
+Install the server
+```bash
+npm install --save-dev webpack-dev-server
+```
+Helps with error messages:
+```js
+devtool: "eval-source-map"
+```
+Tell webpack to watch for changes in our html file
+```js
+watchFiles: ["./src/template.html"]
+```
+
+Run the server:
+```bash
+npx webpack serve
+```
+Our site will then be available via http://localhost:8080/ by default.
+
+> [!TIP]
+> Restart the dev server upon config changes
+>
+> Note that the webpack-dev-server only reads your webpack configuration when you start it. If you change the webpack config file while the dev server is running, it will not reflect those config changes. Use Ctrl + C in the terminal to kill it then rerun npx webpack serve to apply the new config.
